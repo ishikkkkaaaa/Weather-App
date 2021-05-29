@@ -1,0 +1,41 @@
+1) init NPM
+2) InstalL modules, for this we just need Express   -> npm i Express
+
+
+
+
+ const query = "London";
+  const apiKey = "5fa72d7ca14aa46005f8976feacc29d7";
+  const unit = "metric";
+  const url =
+    "https://api.openweathermap.org/data/2.5/weather?q=" +
+    query +
+    "&appid=" +
+    apiKey +
+    "&units=" +
+    unit +
+    "";
+  https.get(url, function (response) {
+    console.log(response);
+    response.on("data", function (data) {
+      //console.log(data);
+      const weatherData = JSON.parse(data);
+      //console.log(weatherData);
+      const temp = weatherData.main.temp;
+      const weatherDescription = weatherData.weather[0].description;
+      const icon = weatherData.weather[0].icon;
+      const imgURL = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
+      /*   console.log(temp);
+      console.log(weatherDescription); */
+      res.write("<p>The weather is current " + weatherDescription + "</p>");
+      res.write(
+        "<h1>The temperature in London is " + temp + " degree Celcius</h1> "
+      );
+
+      res.write("<img src='" + imgURL + "'/>");
+      //we can use multiple res.write but only one
+      res.send();
+    });
+  });
+  //res.send("Server is up and running");
+});

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link type="text/css" href="css/style.css" rel="stylesheet" />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather APP</title>
+  </head>
+  <body>
+    <div class="container my-8">
+      <h1><b>WEATHER APP</b></h1>
+      <form action="/" method="POST" class="form-group">
+        <label class="text" for="cityInput my-3">Enter city name :</label>
+        <input
+          class="form-control my-3"
+          type="text"
+          name="cityName"
+          id="cityInput"
+        />
+        <button class="my-3 py-2 px-5 btn btn-success" type="submit">GO</button>
+      </form>
+    </div>
+  </body>
+</html>
